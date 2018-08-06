@@ -1,0 +1,13 @@
+<h1>Result</h1>
+
+  <% if @word.chars.all? { |letter| @word.count(letter) <= @stringletters.count(letter) } %>
+    <% if  @json['found'] === true %>
+      <h4> Congratulations <%= @word %> is an english word</h4>
+    <% else %>
+      <h4> Sorry but <%= @word %> doesn't seem to be an english word</h4>
+    <% end %>
+  <% else %>
+    <h4> Sorry but <%= @word %> cannot be built with <%= @stringletters %> </h4>
+  <% end %>
+
+<%= link_to "Play A New Game", "new" %>
